@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="student" class="com.tjoeun.springDI_java_in_xml.Student">
+		<constructor-arg value="홍길동"></constructor-arg>
+		<constructor-arg value="26"></constructor-arg>
+		<constructor-arg>
+			<list>
+				<value>java 공부</value>
+				<value>jsp 공부</value>
+				<value>spring 공부</value>
+			</list>
+		</constructor-arg>
+		<property name="height" value="50"/>
+		<property name="weight" value="165"/>
+	</bean>
+	
+	
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+

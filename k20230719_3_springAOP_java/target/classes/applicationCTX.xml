@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns:aop="http://www.springframework.org/schema/aop"
+   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+      http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
+   
+   <!--
+      AOP 설정 준비 사항
+      1. pom.xml 파일에 aspectjweaver dependency를 추가한다.
+      2. bean 설정 파일 aop namespace를 추가한다.
+      3. java 파일에서 @Aspect 어노테이션을 붙여서 AOP를 설정한 정보를 읽어오기 위해서 
+         <aop:aspectj-autoproxy/> 태그를 추가한다.
+   -->
+   <aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+   
+   <!-- AOP 메소드와 설정이 저장된 @Aspect 어노테이션을 붙여준 클래스의 bean을 만든다. -->
+   <bean id="logAop" class="com.tjoeun.springAOP_java.LogAop"></bean>
+      
+      
+   <bean id="student" class="com.tjoeun.springAOP_java.Student">
+      <property name="name" value="홍길동"/>
+      <property name="age" value="13"/>
+      <property name="gradeNum" value="6"/>
+      <property name="classNum" value="13"/>
+   </bean>
+   
+   <bean id="worker" class="com.tjoeun.springAOP_java.Worker">
+      <property name="name" value="카일 워커"/>
+      <property name="age" value="132"/>
+      <property name="job" value="World Class Soccer Player"/>
+   </bean>
+      <!-- AopTest 클래스의 bean -->
+   <bean id="aopTest" class="aopTest.AopTest"></bean>
+   
+<!-- AOP의 핵심은 공통 모듈을 분리시켜 해당 소스코드가 외부의 다른 클래스에서 존재하는 것
+
+ -->   
+   
+   
+</beans>

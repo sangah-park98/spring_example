@@ -42,11 +42,8 @@ public class HomeController {
    @RequestMapping("/insertOK")
    public String insertOK(HttpServletRequest request, Model model, MvcBoardVO mvcBoardVO) {
       logger.info("insertOK() 메소드 실행 -  커맨드 객체 사용"); 
-      
       MybatisDAO mapper = sqlSession.getMapper(MybatisDAO.class);
-      
       mapper.insert(mvcBoardVO);
-      
       return "redirect:list"; 
    }
    
